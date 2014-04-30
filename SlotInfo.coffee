@@ -1,23 +1,23 @@
 class SlotInfo
     constructor: (data) ->
-        @index = data.Index
-        @fwversion = data.FirmwareVersion
-        @cpu = 0
-        @mode = "NA"
-        @serialnum = data.SerialNum
-        @model = data.Model
-        @profile = data.ActiveProfile
-        @portgroups = []
+        @_index = data.Index
+        @_fw_version = data.FirmwareVersion
+        @_cpu = 0
+        @_mode = "NA"
+        @_serial_num = data.SerialNum
+        @_model = data.Model
+        @_profile = data.ActiveProfile
+        @Portgroups = []
 
-    GetData: ->
+    Get_Data: ->
         data = {
-            'id' : @index
-            "software": @fwversion
-            "cpu": @cpu
-            "mode": @mode
-            "serial_number": @serialnum
-            'model' : @model
-            "profile": @profile
+            'id' : @_index
+            "software": @_fw_version
+            "cpu": @_cpu
+            "mode": @_mode
+            "serial_number": @_serial_num
+            'model' : @_model
+            "profile": @_profile
         }
         return data
 

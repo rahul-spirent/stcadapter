@@ -1586,19 +1586,19 @@ for module in chassisRawData.children
 
     for pg in module.children
         pgInfo = new PortGroupInfo(pg.data)       
-        moduleInfo.portgroups.push(pgInfo)
+        moduleInfo.Portgroups.push(pgInfo)
 
-    chassisInfo.modules.push(moduleInfo)
+    chassisInfo.Modules.push(moduleInfo)
 
 
-chassisdata = chassisInfo.GetData()
+chassisdata = chassisInfo.Get_Data()
 
 chassisdata['slots'] = []
-for module in chassisInfo.modules
-    moduledata = module.GetData()
+for module in chassisInfo.Modules
+    moduledata = module.Get_Data()
     moduledata['port_groups'] = []
-    for pgInfo in module.portgroups
-        pgdata = pgInfo.GetData()
+    for pgInfo in module.Portgroups
+        pgdata = pgInfo.Get_Data()
         moduledata.port_groups.push(pgdata)
     chassisdata.slots.push(moduledata)
 
